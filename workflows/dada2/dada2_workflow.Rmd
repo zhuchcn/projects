@@ -1,0 +1,165 @@
+---
+title: "16S Sequencing Data Processing DADA2 Workflow"
+author: "Chenghao Zhu"
+date: "3/7/2018"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Description
+
+* This is a workflow of using DADA2 to do feature(otu) picking on demultiplexed 16S sequencing data. This workflow should be ran after you run the *16S Amplicon Demultiplex Workflow*
+
+* To run this workflow, you need to have R, Rstudio, and the package dada2 installed in your computer. To install dada2, run the following commands.
+
+* For more detail, please read the dada2 tutorial on:
+https://benjjneb.github.io/dada2/tutorial.html
+
+```{r, eval = F}
+source("http://bioconductor.org/biocLite.R")
+biocLite("dada2")
+```
+
+## Step 1. load the library
+
+```{r packages,warning =F, error = F, message=F}
+rm(list=ls())
+library("dada2", quietly=TRUE, verbose=FALSE, warn.conflicts=FALSE)
+cat(paste("dada2 version:", packageVersion("dada2")))
+```
+
+## Step 2. Create a file list
+
+```{r}
+## set your working directory here
+setwd("/Users/chenghaozhu/sequence_data/FF/fastq")
+## path to your fastq files 
+path <- paste0(getwd(),"/alldemultx")
+fnFs <- list.files(path,pattern="R1",full.names=T)
+fnRs <- list.files(path,pattern="R2",full.names=T)
+sample_id = str_split(list.files(path,pattern="R1"),"_R1",simplify=T)[,1]
+
+filt_path <- file.path(path,"filtered")
+filtFs <- file.path(filt_path, paste0(sample_id,"_R1_filt.fastq"))
+filtRs <- file.path(filt_path, paste0(sample_id,"_R2_filt.fastq"))
+```
+
+## Step 3. Filter and Trim
+
+* They only parameter you should specify in this step is the truncLen. The first number is the length to truncate for R1 and the second number is for R2. You can get the truncate length from the last step of the *16S Amplicon Demultiplex Workflow* using fastQC
+
+```{r filiter and trim}
+out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(195,160),
+                     maxN=0,maxEE=c(2,2), truncQ=2,
+                     rm.phix=T, compress=T, multithread=T)
+```
+
+## Step 4. Learn the Error Rates
+
+* This is a very time consuming step. Each step should spend around 20 ~ 40 minutes depends on your computer. If you see a message of "failed to convergence after 6 times of calculation " or something similar, increase the MAX_CONSIST number.
+
+```{r learn the error rates}
+errF <- learnErrors(filtFs, multithread=TRUE, MAX_CONSIST = 20)
+errR <- learnErrors(filtRs, multithread=TRUE, MAX_CONSIST = 30)
+```
+
+```{r}
+dada2:::checkConvergence(errF)
+```
+
+```{r}
+dada2:::checkConvergence(errR)
+```
+
+```{r}
+plotErrors(errF, nominalQ=TRUE)
+```
+
+```{r}
+plotErrors(errR, nominalQ=TRUE)
+```
+
+## Step 5. Dereplication
+
+```{r dereplication}
+derepFs <- derepFastq(filtFs, verbose=TRUE)
+derepRs <- derepFastq(filtRs, verbose=TRUE)
+```
+
+```{r}
+# Name the derep-class objects by the sample names
+names(derepFs) <- sample_id
+names(derepRs) <- sample_id
+```
+
+## Step 6. Sample Inference
+
+```{r sample inference}
+dadaFs <- dada(derepFs, err=errF, multithread=T)
+dadaRs <- dada(derepRs, err=errR, multithread=T)
+```
+
+## Step 7. Merge Paired Reads
+
+```{r merge paired reads}
+mergers <- mergePairs(dadaFs, derepFs, dadaRs, derepRs, verbose=TRUE)
+```
+
+## Step 8. Construct Sequence Table
+
+```{r construct sequence table}
+seqtab <- makeSequenceTable(mergers)
+```
+
+## Step 9. Remove Chimeras
+
+```{r remove chimeras}
+seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread=TRUE, verbose=TRUE)
+```
+
+```{r}
+dim(seqtab.nochim)
+```
+
+## Step 10
+
+```{r}
+getN <- function(x) sum(getUniques(x))
+track <- cbind(out, sapply(dadaFs, getN), sapply(mergers, getN), rowSums(seqtab), rowSums(seqtab.nochim))
+# If processing a single sample, remove the sapply calls: e.g. replace sapply(dadaFs, getN) with getN(dadaFs)
+colnames(track) <- c("input", "filtered", "denoised", "merged", "tabled", "nonchim")
+rownames(track) <- sample_id 
+head(track)
+```
+
+## Step 11. Asign Taxonomy
+
+* In this step, you need to have the silva database available. The most recent version of silva is 132
+
+```{r Asign Taxonomy}
+## Asign Taxonomy
+taxa <- assignTaxonomy(seqtab.nochim, 
+                       "Training/silva_nr_v128_train_set.fa.gz", 
+                       multithread=TRUE, verbose=T,tryRC=T)
+```
+
+```{r Add Species}
+## Add Species
+taxa <- addSpecies(taxa, "Training/silva_species_assignment_v128.fa.gz",
+                   tryRC=T,verbose=T)
+```
+
+```{r}
+taxa.print <- taxa # Removing sequence rownames for display only
+rownames(taxa.print) <- NULL
+head(taxa.print) 
+```
+
+## Step 12. Save
+
+## Save the data. The data cleaning will be done in another script/rmarkdown
+
+```{r}
+save.image(file='dada2.Rdata')
+```

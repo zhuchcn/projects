@@ -1,0 +1,25 @@
+.md-sidebar--primary .md-nav__title{
+  font-size: 115%
+}
+.md-sidebar--primary ul.md-nav__list {
+  margin-top: 20px;
+}
+
+.md-sidebar--primary ul.md-nav__list > li {
+  height: 35px;
+  margin: auto;
+  font-size: 110%;
+  text-transform: uppercase;
+}
+
+.md-sidebar--primary ul.md-nav__list > li  a{
+  margin: auto;
+}
+
+.md-sidebar--primary li i {
+  margin-right: 15px;
+}
+
+.md-sidebar--secondary ul {
+  margin-left: 15px
+}
