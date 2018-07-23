@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Chenghao's Project Site\n\u00b6\n\n\n Research Studies\n\u00b6\n\n\n \nFast Food Study\n\n\n \nEgg Study\n\n\n \nGhana Study\n\n\n \nAlzheimer Study\n\n\n  Github Projects\n\u00b6\n\n\n \nMetabase\n\n\nR package for storing, handling, anlyzing, and visualizing high though-put experiment data, such as metabolomics and proteomics.\n\n\n \nphylox\n\n\nR package for storing, handling, analyzing and visualizing phylogenic sequencing data in different phylogenic levels.\n\n\n \nzheatmap\n\n\nR package for generating clustered and annotated heatmaps using ggplot2 package.\n\n\n \nggmetaplots\n\n\nR package with encapsulated functions to generate different plots that is frequently used, such as boxplot and scatterplot.",
+            "text": "Chenghao's Project Site\n\u00b6\n\n\n Research Studies\n\u00b6\n\n\n \nFast Food Study\n\n\n \nEgg Study\n\n\n \nGhana Study\n\n\n \nAlzheimer Study\n\n\n  Github Projects\n\u00b6\n\n\n \nMetabase\n\n\nR package for storing, handling, anlyzing, and visualizing high though-put experiment data, such as metabolomics and proteomics.\n\n\n \nphylox\n\n\nR package for storing, handling, analyzing and visualizing phylogenic sequencing data in different phylogenic levels.\n\n\n \nzheatmap\n\n\nR package for generating clustered and annotated heatmaps using ggplot2 package.\n\n\n \nggmetaplots\n\n\nR package with encapsulated functions to generate different plots that is frequently used, such as boxplot and scatterplot.\n\n\n \nAbout me\n\u00b6",
             "title": "Home"
         },
         {
@@ -19,6 +19,11 @@
             "location": "/#github-projects",
             "text": "Metabase  R package for storing, handling, anlyzing, and visualizing high though-put experiment data, such as metabolomics and proteomics.    phylox  R package for storing, handling, analyzing and visualizing phylogenic sequencing data in different phylogenic levels.    zheatmap  R package for generating clustered and annotated heatmaps using ggplot2 package.    ggmetaplots  R package with encapsulated functions to generate different plots that is frequently used, such as boxplot and scatterplot.",
             "title": "  Github Projects"
+        },
+        {
+            "location": "/#about-me",
+            "text": "",
+            "title": " About me"
         },
         {
             "location": "/tutorials/",
