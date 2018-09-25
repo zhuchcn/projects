@@ -87,13 +87,18 @@
         },
         {
             "location": "/presents/",
-            "text": "Introduction to High Throughput Experiment Data Analysis\n\u00b6\n\n\n[\ngithub repo\n] [\nview slides\n] \n \n\nThis is a presentation given in the Zivkovic Lab meeting (07/25/2018)",
+            "text": "Introduction to High Throughput Experiment Data Analysis\n\u00b6\n\n\n[\ngithub repo\n] [\nview slides\n] \n \n\nPresentated at the Zivkovic Lab meeting (07/25/2018)\n\n\n The Art of Data Analysis\n\u00b6\n\n\n[\ngithub repo\n] [\nview slides\n] \n \n\nPresentated at the Zivkovic Lab meeting (09/25/2018)",
             "title": "Presentations"
         },
         {
             "location": "/presents/#introduction-to-high-throughput-experiment-data-analysis",
-            "text": "[ github repo ] [ view slides ]    \nThis is a presentation given in the Zivkovic Lab meeting (07/25/2018)",
+            "text": "[ github repo ] [ view slides ]    \nPresentated at the Zivkovic Lab meeting (07/25/2018)",
             "title": " Introduction to High Throughput Experiment Data Analysis"
+        },
+        {
+            "location": "/presents/#the-art-of-data-analysis",
+            "text": "[ github repo ] [ view slides ]    \nPresentated at the Zivkovic Lab meeting (09/25/2018)",
+            "title": " The Art of Data Analysis"
         }
     ]
 }
