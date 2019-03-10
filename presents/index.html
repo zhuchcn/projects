@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-2.9.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,18 +57,47 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
       <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-118767459-2", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -127,22 +156,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Chenghao Zhu
-              </span>
-              <span class="md-header-nav__topic">
-                Presentations
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Chenghao Zhu
+            </span>
+            <span class="md-header-nav__topic">
+              Presentations
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +191,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +201,18 @@
 
   
 
-
-  <a href="https://github.com/zhuchcn/projects/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      zhuchcn/projects
+<a href="https://github.com/zhuchcn/projects/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    zhuchcn/projects
+  </div>
+</a>
           </div>
         </div>
       
@@ -211,7 +234,7 @@
         
   <li class="md-tabs__item">
     
-      <a href="" title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href=".." title="Home" class="md-tabs__link md-tabs__link--active">
         Home
       </a>
     
@@ -241,11 +264,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <span class="md-nav__button md-logo">
+    <a href="https://www.chenghaozhu.net" title="Chenghao Zhu" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Chenghao Zhu
   </label>
   
@@ -255,20 +278,18 @@
 
   
 
-
-  <a href="https://github.com/zhuchcn/projects/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      zhuchcn/projects
+<a href="https://github.com/zhuchcn/projects/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    zhuchcn/projects
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -279,7 +300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="" title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       
       <i class="fa fa-home"></i>
       Home
@@ -293,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorials/" title="Tutorials" class="md-nav__link">
+    <a href="../tutorials/" title="Tutorials" class="md-nav__link">
       
       <i class="fa fa-briefcase"></i>
       Tutorials
@@ -307,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="docs/" title="Documentations" class="md-nav__link">
+    <a href="../docs/" title="Documentations" class="md-nav__link">
       
       <i class="fa fa-book"></i>
       Documentations
@@ -321,7 +342,7 @@
 
 
   <li class="md-nav__item">
-    <a href="workflows/" title="Workflows" class="md-nav__link">
+    <a href="../workflows/" title="Workflows" class="md-nav__link">
       
       <i class="fa fa-sitemap"></i>
       Workflows
@@ -335,7 +356,7 @@
 
 
   <li class="md-nav__item">
-    <a href="moocs/" title="Online Courses" class="md-nav__link">
+    <a href="../moocs/" title="Online Courses" class="md-nav__link">
       
       <i class="ai ai-coursera"></i>
       Online Courses
@@ -359,7 +380,7 @@
         Presentations
       </label>
     
-    <a href="presents/" title="Presentations" class="md-nav__link md-nav__link--active">
+    <a href="./" title="Presentations" class="md-nav__link md-nav__link--active">
       
       <i class="fa fa-microphone"></i>
       Presentations
@@ -404,8 +425,8 @@
                 </div>
               </div>
             
+            
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -439,11 +460,8 @@
 </nav>
                   </div>
                 </div>
-                
-                <div style="position:absolute; left:0px; bottom:0px; width=100%">
-                  <iframe src=https://calendar.google.com/calendar/embed?title=%20&amp;src=ucdavis.edu_vljd64krjklfru2ugsjfmt3j9g%40group.calendar.google.com&ctz=America%2FLos_Angeles style="border: 0" width=100% height="300" frameborder="0" scrolling="no"></iframe>
-                </div>
               </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -480,7 +498,7 @@ Presentated at the Zivkovic Lab meeting (09/25/2018)</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="moocs/" title="Online Courses" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../moocs/" title="Online Courses" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -509,7 +527,6 @@ Presentated at the Zivkovic Lab meeting (09/25/2018)</p>
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
@@ -526,21 +543,15 @@ Presentated at the Zivkovic Lab meeting (09/25/2018)</p>
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.d0060b13.js"></script>
+      <script src="../assets/javascripts/application.955ddd4c.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-118767459-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>
