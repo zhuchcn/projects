@@ -8,12 +8,12 @@
 .md-sidebar--primary ul.md-nav__list > li {
   height: 35px;
   margin: auto;
-  font-size: 120%;
+  font-size: 110%;
   text-transform: uppercase;
 }
 
 .md-sidebar--primary li.md-nav__item--nested {
-  height: 100% !important  
+  height: auto !important  
 }
 
 .md-sidebar--primary ul.md-nav__list > li  a{
