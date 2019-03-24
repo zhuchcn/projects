@@ -262,7 +262,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../english/" title="Blogs" class="md-tabs__link">
+        <a href="../../en/" title="Blogs" class="md-tabs__link">
           Blogs
         </a>
       
@@ -445,7 +445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../english/" title="blogs" class="md-nav__link">
+    <a href="../../en/" title="blogs" class="md-nav__link">
       
       <i class="fa fa-home"></i>
       blogs
@@ -513,7 +513,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chinese/" title="blogs" class="md-nav__link">
+    <a href="../" title="blogs" class="md-nav__link">
       
       <i class="fa fa-home"></i>
       blogs
@@ -535,11 +535,68 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        zeallot
+      </label>
+    
     <a href="./" title="zeallot" class="md-nav__link md-nav__link--active">
       
       <i class="fa fa-briefcase"></i>
       zeallot
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-assignment-in-python" title="Multiple assignment in python" class="md-nav__link">
+    Multiple assignment in python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-assignment-in-r" title="Multiple assignment in R" class="md-nav__link">
+    Multiple assignment in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construct-a-dataframe" title="Construct a data.frame" class="md-nav__link">
+    Construct a data.frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ggplot2" title="ggplot2 也能用" class="md-nav__link">
+    ggplot2 也能用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpacking-in-for-loop" title="Unpacking in for loop" class="md-nav__link">
+    Unpacking in for loop
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -585,6 +642,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-assignment-in-python" title="Multiple assignment in python" class="md-nav__link">
+    Multiple assignment in python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-assignment-in-r" title="Multiple assignment in R" class="md-nav__link">
+    Multiple assignment in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construct-a-dataframe" title="Construct a data.frame" class="md-nav__link">
+    Construct a data.frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ggplot2" title="ggplot2 也能用" class="md-nav__link">
+    ggplot2 也能用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpacking-in-for-loop" title="Unpacking in for loop" class="md-nav__link">
+    Unpacking in for loop
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -599,6 +700,7 @@
                 
                 
                 <h1 id="zeallot-r-python-multiple-assignment">zeallot, 用 R 实现 python 的 multiple assignment<a class="headerlink" href="#zeallot-r-python-multiple-assignment" title="Permanent link">&para;</a></h1>
+<h2 id="multiple-assignment-in-python">Multiple assignment in python<a class="headerlink" href="#multiple-assignment-in-python" title="Permanent link">&para;</a></h2>
 <p>Python 有很多非常优秀的地方。让我非常喜欢的一个特点是它的 multiple assignment 的功能。假设我们要赋值给两个变量 <code>x</code> 和 <code>y</code>。常规的方法是：</p>
 <div class="codehilite"><pre><span></span>x = 1
 y = 2
@@ -622,6 +724,7 @@ y = z
 <div class="codehilite"><pre><span></span>x, y = y, x
 </pre></div>
 
+<h2 id="multiple-assignment-in-r">Multiple assignment in R<a class="headerlink" href="#multiple-assignment-in-r" title="Permanent link">&para;</a></h2>
 <p>那么，在 R 里有没有这样类似的 multiple assignemtn 的方法呢？答案已经在标题里了，就是用这个 <code>zeallot</code> package。<code>zeallot</code> package 利用一个特殊的操作符 <code>%&lt;-%</code> 来完成 multiple assignment。</p>
 <div class="codehilite"><pre><span></span>library(zeallot)
 c(x, y) %&lt;-% c(1, 2)
@@ -657,6 +760,37 @@ disp
 # [1] 160 160 108 258 360 225
 </pre></div>
 
+<h2 id="construct-a-dataframe">Construct a data.frame<a class="headerlink" href="#construct-a-dataframe" title="Permanent link">&para;</a></h2>
+<p><code>zeallot</code> 还能用在构建 <code>data.frame</code> 多过程中。</p>
+<div class="codehilite"><pre><span></span>df2 = data.frame(
+    id = 1:6,
+    c(mpg, cyl, disp) %&lt;-% head(mtcars, 6)[,c(&quot;mpg&quot;, &quot;cyl&quot;, &quot;disp&quot;)]
+)
+df2
+#                   id  mpg cyl disp
+# Mazda RX4          1 21.0   6  160
+# Mazda RX4 Wag      2 21.0   6  160
+# Datsun 710         3 22.8   4  108
+# Hornet 4 Drive     4 21.4   6  258
+# Hornet Sportabout  5 18.7   8  360
+# Valiant            6 18.1   6  225
+</pre></div>
+
+<h2 id="ggplot2">ggplot2 也能用<a class="headerlink" href="#ggplot2" title="Permanent link">&para;</a></h2>
+<p>但得注意，右边必须得把 plots 放在 <code>list</code> 当中。用 <code>c</code> 显然是不行的..</p>
+<div class="codehilite"><pre><span></span>library(ggplot2)
+p1 = ggplot(mtcars, aes(factor(cyl), mpg)) + geom_boxplot()
+p2 = ggplot(mtcars, aes(factor(cyl), hp)) + geom_boxplot()
+c(p1, p2) %&lt;-% lapply(list(p1, p2), function(p) p + theme_bw() + labs(title = &quot;Boozaa!&quot;))
+p1
+</pre></div>
+
+<p><img alt="p1" src="../../img/2019-03-23/p1.png" /></p>
+<div class="codehilite"><pre><span></span>p2
+</pre></div>
+
+<p><img alt="p2" src="../../img/2019-03-23/p2.png" /></p>
+<h2 id="unpacking-in-for-loop">Unpacking in for loop<a class="headerlink" href="#unpacking-in-for-loop" title="Permanent link">&para;</a></h2>
 <p>Python 的 multiple assignment 实际上是运用了 <code>tuple</code> 来实现的。而 <code>tuple</code> 还可以有更多的用途。比如在 for loop 中的 unpacking 尤其的方便：</p>
 <div class="codehilite"><pre><span></span>alist = {&#39;a&#39;:1, &#39;b&#39;:2, &#39;c&#39;:3}
 for key, val in alist.items():
@@ -691,7 +825,7 @@ for key, val in alist.items():
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../chinese/" title="blogs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="blogs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
