@@ -13,7 +13,7 @@
         <meta name="description" content="This is my project website">
       
       
-        <link rel="canonical" href="https://www.chenghaozhu.net/tutorials/">
+        <link rel="canonical" href="https://www.chenghaozhu.net/posts/en/2019-03-25/">
       
       
         <meta name="author" content="Chenghao Zhu">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
-        <title>Tutorials - Chenghao Zhu</title>
+        <title>shiny-modules - Chenghao Zhu</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -66,10 +66,10 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     
       
@@ -135,7 +135,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#qiime2" tabindex="1" class="md-skip">
+      <a href="#modularize-your-shiny-app-using-shiny-module-and-r6-class" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -146,7 +146,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://www.chenghaozhu.net" title="Chenghao Zhu" class="md-header-nav__button md-logo">
           
-            <img src="../assets/images/favicon.png" width="24" height="24">
+            <img src="../../../assets/images/favicon.png" width="24" height="24">
           
         </a>
       </div>
@@ -160,7 +160,7 @@
               Chenghao Zhu
             </span>
             <span class="md-header-nav__topic">
-              Tutorials
+              shiny-modules
             </span>
           
         </div>
@@ -227,14 +227,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -260,7 +262,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../posts/en/" title="Blogs" class="md-tabs__link">
+        <a href="../" title="Blogs" class="md-tabs__link md-tabs__link--active">
           Blogs
         </a>
       
@@ -285,7 +287,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.chenghaozhu.net" title="Chenghao Zhu" class="md-nav__button md-logo">
       
-        <img src="../assets/images/favicon.png" width="48" height="48">
+        <img src="../../../assets/images/favicon.png" width="48" height="48">
       
     </a>
     Chenghao Zhu
@@ -319,7 +321,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       
       <i class="fa fa-home"></i>
       Home
@@ -331,68 +333,13 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Tutorials
-      </label>
-    
-    <a href="./" title="Tutorials" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../tutorials/" title="Tutorials" class="md-nav__link">
       
       <i class="fa fa-briefcase"></i>
       Tutorials
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#qiime2" title="QIIME2" class="md-nav__link">
-    QIIME2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dada2-tutorial" title="DADA2 Tutorial" class="md-nav__link">
-    DADA2 Tutorial
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#picrust-tutorial-with-de-novo-variants" title="PICRUSt Tutorial with de novo Variants" class="md-nav__link">
-    PICRUSt Tutorial with de novo Variants
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phyloseq" title="Phyloseq" class="md-nav__link">
-    Phyloseq
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -402,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docs/" title="Documentations" class="md-nav__link">
+    <a href="../../../docs/" title="Documentations" class="md-nav__link">
       
       <i class="fa fa-book"></i>
       Documentations
@@ -416,7 +363,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../workflows/" title="Workflows" class="md-nav__link">
+    <a href="../../../workflows/" title="Workflows" class="md-nav__link">
       
       <i class="fa fa-sitemap"></i>
       Workflows
@@ -430,7 +377,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../moocs/" title="Online Courses" class="md-nav__link">
+    <a href="../../../moocs/" title="Online Courses" class="md-nav__link">
       
       <i class="ai ai-coursera"></i>
       Online Courses
@@ -444,7 +391,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../presents/" title="Presentations" class="md-nav__link">
+    <a href="../../../presents/" title="Presentations" class="md-nav__link">
       
       <i class="fa fa-microphone"></i>
       Presentations
@@ -456,10 +403,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Blogs
@@ -475,10 +424,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1" checked>
     
     <label class="md-nav__link" for="nav-7-1">
       English
@@ -496,7 +447,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../posts/en/" title="blogs" class="md-nav__link">
+    <a href="../" title="blogs" class="md-nav__link">
       
       <i class="fa fa-home"></i>
       blogs
@@ -508,13 +459,86 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../posts/en/2019-03-25/" title="shiny-modules" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        shiny-modules
+      </label>
+    
+    <a href="./" title="shiny-modules" class="md-nav__link md-nav__link--active">
       
       <i class="fa fa-briefcase"></i>
       shiny-modules
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shiny-app" title=" Shiny app" class="md-nav__link">
+     Shiny app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shiny-modules" title=" Shiny modules" class="md-nav__link">
+     Shiny modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r6-class" title=" R6 class" class="md-nav__link">
+     R6 class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modularize-your-shiny-app-with-r6-class" title=" Modularize your shiny app with R6 class" class="md-nav__link">
+     Modularize your shiny app with R6 class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-your-shiny-app-with-r6-module" title=" Structure your shiny app with R6 module" class="md-nav__link">
+     Structure your shiny app with R6 module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title=" Conclusion" class="md-nav__link">
+     Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -524,7 +548,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../posts/en/2019-03-23/" title="zeallot" class="md-nav__link">
+    <a href="../2019-03-23/" title="zeallot" class="md-nav__link">
       
       <i class="fa fa-book"></i>
       zeallot
@@ -538,7 +562,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../posts/en/2019-03-22/" title="match.call" class="md-nav__link">
+    <a href="../2019-03-22/" title="match.call" class="md-nav__link">
       
       <i class="fa fa-sitemap"></i>
       match.call
@@ -576,7 +600,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../posts/cn/" title="blogs" class="md-nav__link">
+    <a href="../../cn/" title="blogs" class="md-nav__link">
       
       <i class="fa fa-home"></i>
       blogs
@@ -590,7 +614,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../posts/cn/2019-03-23/" title="zeallot" class="md-nav__link">
+    <a href="../../cn/2019-03-23/" title="zeallot" class="md-nav__link">
       
       <i class="fa fa-briefcase"></i>
       zeallot
@@ -604,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../posts/cn/2019-03-22/" title="match.call" class="md-nav__link">
+    <a href="../../cn/2019-03-22/" title="match.call" class="md-nav__link">
       
       <i class="fa fa-book"></i>
       match.call
@@ -636,34 +660,50 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#qiime2" title="QIIME2" class="md-nav__link">
-    QIIME2
+  <a href="#shiny-app" title=" Shiny app" class="md-nav__link">
+     Shiny app
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dada2-tutorial" title="DADA2 Tutorial" class="md-nav__link">
-    DADA2 Tutorial
+  <a href="#shiny-modules" title=" Shiny modules" class="md-nav__link">
+     Shiny modules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#picrust-tutorial-with-de-novo-variants" title="PICRUSt Tutorial with de novo Variants" class="md-nav__link">
-    PICRUSt Tutorial with de novo Variants
+  <a href="#r6-class" title=" R6 class" class="md-nav__link">
+     R6 class
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phyloseq" title="Phyloseq" class="md-nav__link">
-    Phyloseq
+  <a href="#modularize-your-shiny-app-with-r6-class" title=" Modularize your shiny app with R6 class" class="md-nav__link">
+     Modularize your shiny app with R6 class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-your-shiny-app-with-r6-module" title=" Structure your shiny app with R6 module" class="md-nav__link">
+     Structure your shiny app with R6 module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title=" Conclusion" class="md-nav__link">
+     Conclusion
   </a>
   
 </li>
@@ -684,27 +724,166 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zhuchcn/projects/edit/master/docs/tutorials.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/zhuchcn/projects/edit/master/docs/posts/en/2019-03-25.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Tutorials</h1>
-                
-                <h2 id="qiime2"><a href="docs.qiime2.org/">QIIME2</a><a class="headerlink" href="#qiime2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Qiime2 is actively under developing, with new version released every other month. By the time that I wrote this, qiime2's DADA2 function is much slower (plus there is some problem that we haven't solved of using qiime2's dada2). However, qiime2 is embedded with the fasttree tool. So if you want to use it to build a phylogenic tree, please read the tutorial in qiime2 website, and make sure to use the latest version.</li>
-</ul>
-<h2 id="dada2-tutorial"><a href="https://benjjneb.github.io/dada2/tutorial.html">DADA2 Tutorial</a><a class="headerlink" href="#dada2-tutorial" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The original dada2 is a R package available on bioconductor.</li>
-</ul>
-<h2 id="picrust-tutorial-with-de-novo-variants"><a href="https://github.com/LangilleLab/microbiome_helper/wiki/PICRUSt-Tutorial-with-de-novo-Variants">PICRUSt Tutorial with de novo Variants</a><a class="headerlink" href="#picrust-tutorial-with-de-novo-variants" title="Permanent link">&para;</a></h2>
-<ul>
-<li>This tutorial allows you to use dada2 output to do function prediction with PICRUSt.</li>
-</ul>
-<h2 id="phyloseq"><a href="http://joey711.github.io/phyloseq/">Phyloseq</a><a class="headerlink" href="#phyloseq" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Phyloseq is a package that dedicated for microbiome data analysis. It can calculate the alpha diversity, and beta diversity with different methods (unifrac, bray curtis, etc.). But it does not have a phylogenic tree building method which is required by the unifrac method. So you will need to use the qiime2 before phyloseq. The phyloseq's plotting functions are very capsulized, and not very flexible. </li>
-</ul>
+                <h1 id="modularize-your-shiny-app-using-shiny-module-and-r6-class">Modularize your shiny app using shiny module and R6 class<a class="headerlink" href="#modularize-your-shiny-app-using-shiny-module-and-r6-class" title="Permanent link">&para;</a></h1>
+<h2 id="shiny-app"><i class="fa fa-hand-o-right"></i> Shiny app<a class="headerlink" href="#shiny-app" title="Permanent link">&para;</a></h2>
+<p><a href="https://shiny.rstudio.com/">Shiny</a> is an R package developed by the RStudio company that provides a solution for quickly web application development mostly for data science/analysis purpose. It's kinda true that not a lot of data scientists have much web knowledge. But when the complexity of your data grows, or when your model has many parameters to tune, being able to visualize on a web app can help you make the decision quickly. Shiny is (sort of) a complete MVC web framework in R, and even some one without any web background can build a simple app very quickly. </p>
+<p>In shiny, the ui is defined in the ui object, while the server is defined in the server function as below.</p>
+<div class="codehilite"><pre><span></span># in &#39;app.R&#39; file
+library(shiny)
+
+# define the UI
+ui = fluidPage(
+    fluidRow(
+        numericInput(&#39;x&#39;, &#39;Input x&#39;, 0),
+        numericInput(&#39;y&#39;, &#39;Input y&#39;, 0),
+        &quot;x + y =&quot;,
+        textOutput(&#39;sum&#39;, inline = TRUE)
+    )
+)
+
+# define the server
+server = function(input, output, session){
+    output$sum = renderText({
+        input$x + input$y
+    })
+}
+
+shiny::shinyApp(ui, server)
+</pre></div>
+
+<p>Now a problem is, when your app grows, defining everything together makes it really hard to maintain. Can you imagine to change a component of an app with thousands of lines of codes? </p>
+<h2 id="shiny-modules"><i class="fa fa-hand-o-right"></i> Shiny modules<a class="headerlink" href="#shiny-modules" title="Permanent link">&para;</a></h2>
+<p>Fortunately, RStudio provided a solution to this, the <a href="https://shiny.rstudio.com/articles/modules.html">shiny module</a>. This is article on the RStudio website gave a brief yet enough introduction to shiny module (ps. here is another thing I want to complain about shiny. As a web framework, the documentation is just far from adequate. Only some articles on RStudio website? No.). However, it does not solve the problem of the chaos of the namespace of the app. If you define a function or a variable in a module, this will effect everything else. So, my solution is, the <a href="https://r6.r-lib.org/">R6 class</a>.</p>
+<h2 id="r6-class"><i class="fa fa-hand-o-right"></i> R6 class<a class="headerlink" href="#r6-class" title="Permanent link">&para;</a></h2>
+<p>So what is R6 class. R has 4 OOP systems, the S3, S4, RC (reference class), and R6 class. Like RC, R6 is also referenced OOP system. And the grammar is very similar to other languages. The example code below is an example of how to define an R6Class.</p>
+<div class="codehilite"><pre><span></span>library(R6)
+A = R6Class(
+    &quot;A&quot;,    # classname, must (or usually?) be the same as the left hand side of R6Class above
+    public = list(  
+        param1 = NULL,  # define attributes. You can define as many attributes as you wish
+        param2 = NULL,  # I like to initialize the attributes with NULL, but you can absolutely initialize them with certain values
+        initialize = function(param1 = 1, param2 = 2){
+            self$param1 = param1
+            self$param2 = param2
+        },
+        method1 = function(){
+
+        },
+        method2 = function(){
+
+        }
+    )
+)
+</pre></div>
+
+<p>To create an new instance of the defined R6 class <code>A</code>, use <code>A$new()</code>. The default initializer does not take any arguments, however this can be overwritten using the <code>initalize</code> function. So using the example class above, we use <code>A$new(5, 10)</code>. use the<code>self</code> keyword to access the attributes within the class in the class methods. To be noted that, the attributes can also be changed from outside of the class. This is not a problem, but if you would like some of your class attributes to be more secure, you can put them in to the <code>private</code> attributes. To learn more about the R6 class, Handley Wickham has a chapter in his book <em><a href="https://adv-r.hadley.nz/r6.html">Advanced R</a></em> about the R6 class.</p>
+<h2 id="modularize-your-shiny-app-with-r6-class"><i class="fa fa-hand-o-right"></i> Modularize your shiny app with R6 class<a class="headerlink" href="#modularize-your-shiny-app-with-r6-class" title="Permanent link">&para;</a></h2>
+<p>With the help of R6 class, we are now able to really modularize our shiny app and also separate the namespaces by defining attributes and funcitons inside the classes. In the example below,we first defined a <code>InfoBox</code> module that takes in a <code>msg</code> variable, and print it out on the screen. And because it's a R6 class module, it can be reused. R6 class also allows your to define functions in side the class (inside the public list). And the beauty of that is you can be absolutely confident that this particular function will never effect any other modules.</p>
+<div class="codehilite"><pre><span></span># InfoBox.R
+InfoBox = R6Class(
+    &quot;InfoBox&quot;,
+    public = list(
+        # attributes
+        id = NULL,
+
+        # initializer
+        initialize = function(id){
+            self$id = id
+        },
+
+        # UI
+        ui = function(){
+
+            # the ns function here will prepend a prefix to all the ids in the app.
+            ns = NS(self$id)
+
+            tagList(
+
+                # The id in each UI element must be wrapped in the ns function, in
+                # order to be correctly recognized in the server function inside 
+                # the module.
+                textOutput(ns(&#39;text&#39;))
+            )
+        },
+
+        # server
+        server = function(input, output, session, msg){
+            output$text = renderText({ msg })
+        },
+
+        # call
+        call = function(input, ouput, session, msg){
+            callModule(self$server, self$id, msg)
+        }
+    )
+)
+</pre></div>
+
+<div class="codehilite"><pre><span></span># app.R
+library(shiny); library(R6)
+
+# you can use source(&quot;InfoBox.R&quot;), however, using import::here makes your code more clear.
+import::here(InfoBox, .from = &quot;InfoBox.R&quot;)
+
+App = R6Class(
+    &quot;App&quot;,
+    public = list(
+        # attributes
+        infoBox1 = NULL,
+        infoBox2 = NULL,  
+
+        # initialize
+        initialize = function(){
+            self$infoBox1 = InfoBox$new(&quot;box1&quot;)
+            self$infoBox2 = InfoBox$new(&quot;box2&quot;)
+        },
+        # UI
+        ui = function(){
+            fluidPage(
+                self$infoBox1$ui(),
+                tags$hr(),
+                self$infoBox2$ui()
+            )
+        },
+
+        # server
+        server = function(input, output, session){
+            self$infoBox1$call(msg = &quot;I am groot&quot;)
+            self$infoBox2$call(msg = &quot;I am Steve Rogers&quot;)
+        }
+    )
+)
+
+app = App$new()
+
+shiny::shinyApp(app$ui(), app$server)
+</pre></div>
+
+<h2 id="structure-your-shiny-app-with-r6-module"><i class="fa fa-hand-o-right"></i> Structure your shiny app with R6 module<a class="headerlink" href="#structure-your-shiny-app-with-r6-module" title="Permanent link">&para;</a></h2>
+<p>Now with the R6 shiny module, we can break the shiny app into pieces, put them into separate R scripts, group them up in folders. An example of a modularized shiny app structure is below. Different developers definitly have different style, but as long as it is modularized and stored in certain structure, it definitly improves the developing experience.</p>
+<div class="codehilite"><pre><span></span>my-shiny-app
+|-- app.R
++-- global.R
++-- components
+    +-- modules
+    |   +-- ShinyModule.R
+    |   +-- DataTable.R
+    |   +-- InfoBox.R
+    +-- layout
+    |   +-- Header.R
+    |   +-- Body.R
+    |   +-- Sidebar.R
+    +-- pages
+        +-- Page1.R
+        +-- Page2.R
+        +-- Page3.R
+</pre></div>
+
+<h2 id="conclusion"><i class="fa fa-hand-o-right"></i> Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>With the R6 shiny module, this is now like a morden web framework such as Vue or Django. You may find it to be a little redundent sometimes, but it makes the maintainance much easier.</p>
                 
                   
                 
@@ -725,7 +904,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="blogs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -734,19 +913,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                blogs
               </span>
             </div>
           </a>
         
         
-          <a href="../docs/" title="Documentations" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../2019-03-23/" title="zeallot" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Documentations
+                zeallot
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -773,7 +952,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
     
       <a href="https://github.com/zhuchcn" class="md-footer-social__link fa fa-github"></a>
@@ -794,11 +973,11 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.955ddd4c.js"></script>
+      <script src="../../../assets/javascripts/application.955ddd4c.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
-        <script src="../src/extra.js"></script>
+        <script src="../../../src/extra.js"></script>
       
     
   </body>
