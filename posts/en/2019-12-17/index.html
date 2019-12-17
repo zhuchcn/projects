@@ -13,7 +13,7 @@
         <meta name="description" content="This is my project website">
       
       
-        <link rel="canonical" href="https://www.chenghaozhu.net/posts/en/2019-07-07/">
+        <link rel="canonical" href="https://www.chenghaozhu.net/posts/en/2019-12-17/">
       
       
         <meta name="author" content="Chenghao Zhu">
@@ -42,7 +42,7 @@
     
     
       
-        <title>rJava - Chenghao Zhu</title>
+        <title>model selection - Chenghao Zhu</title>
       
     
     
@@ -135,7 +135,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#jdk-dependency-for-rjava-in-macos" tabindex="1" class="md-skip">
+      <a href="#linear-model-selection" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -160,7 +160,7 @@
               Chenghao Zhu
             </span>
             <span class="md-header-nav__topic">
-              rJava
+              model selection
             </span>
           
         </div>
@@ -459,20 +459,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../2019-12-17/" title="model selection" class="md-nav__link">
-      
-      <i class="fa fa-briefcase"></i>
-      model selection
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -483,12 +469,83 @@
       
     
     
-    <a href="./" title="rJava" class="md-nav__link md-nav__link--active">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        model selection
+      </label>
+    
+    <a href="./" title="model selection" class="md-nav__link md-nav__link--active">
+      
+      <i class="fa fa-briefcase"></i>
+      model selection
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" title="Intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" title="Data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unadjusted-model" title="Unadjusted model" class="md-nav__link">
+    Unadjusted model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjusted-model" title="Adjusted model" class="md-nav__link">
+    Adjusted model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlms" title="mlms" class="md-nav__link">
+    mlms
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2019-07-07/" title="rJava" class="md-nav__link">
       
       <i class="fa fa-book"></i>
       rJava
     </a>
-    
   </li>
 
         
@@ -627,6 +684,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" title="Intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" title="Data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unadjusted-model" title="Unadjusted model" class="md-nav__link">
+    Unadjusted model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjusted-model" title="Adjusted model" class="md-nav__link">
+    Adjusted model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlms" title="mlms" class="md-nav__link">
+    mlms
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -637,41 +738,179 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zhuchcn/projects/edit/master/docs/posts/en/2019-07-07.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/zhuchcn/projects/edit/master/docs/posts/en/2019-12-17.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="jdk-dependency-for-rjava-in-macos">JDK dependency for rJava in MacOS<a class="headerlink" href="#jdk-dependency-for-rjava-in-macos" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/s-u/rJava">rJava</a> is an interface that allows users/developers to use Java from R. And there are a few R packages depend on it. However getting it to work seems to be a well-known pain. The <a href="https://github.com/colearendt/xlsx">xlsx</a> is a R package that can both read and write xlsx spreadsheet from R and, unsurprisingly, it depends on rJava. I struggled a lot a couple of years ago and somehow got it work successfully on my old MacBook air. Earlier this year, I got a new MacBook pro, and here the problem comes back.</p>
-<p>Installing the xlsx package from CRAN automatically installs the rJava packages, too, because of the dependency. But when I load the package, it throws me an error.</p>
-<div class="codehilite"><pre><span></span>&gt; library(xlsx)
-Unable to find any JVMs matching version &quot;(null)&quot;.
-No Java runtime present, try --request to install.
-Error: package or namespace load failed for ‘xlsx’:
- .onLoad failed in loadNamespace() for &#39;rJava&#39;, details:
-  call: dyn.load(file, DLLpath = DLLpath, ...)
-  error: unable to load shared object &#39;/Library/Frameworks/R.framework/Versions/3.5/Resources/library/rJava/libs/rJava.so&#39;:
-  dlopen(/Library/Frameworks/R.framework/Versions/3.5/Resources/library/rJava/libs/rJava.so, 6): Library not loaded: /Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home/lib/server/libjvm.dylib
-  Referenced from: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/rJava/libs/rJava.so
-  Reason: image not found
-In addition: Warning message:
-In system(&quot;/usr/libexec/java_home&quot;, intern = TRUE) :
-  running command &#39;/usr/libexec/java_home&#39; had status 1
+                <h1 id="linear-model-selection">Linear Model selection<a class="headerlink" href="#linear-model-selection" title="Permanent link">&para;</a></h1>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
+<p>Recently I was involved in a study that I collaborate with people from the program of international nutrition who have designated specialty on epidemiology and public health. Epidemiologists often attempt to answer questions such as, "does a treatment cause a significant effect on particular outcome in particular population?", "is a particular variable different in subgroups of a population?", or "is a particular variable associated with another in a population?" Scientists often perform observational studies over hundreds or thousands of people through a long period.</p>
+<p>The study that I was involved in, was an interventional study done in Ghana. In this study, pregnant women were given either of two nutritional supplement IFA and LNS until infants were 6 months of age. Infants were then received the same supplementation from 6 to 18 month. In this particular case, we want to answer the question that whether the two supplementations have different effect on infants growth at 18 month. Thus the main effect model would be as following.</p>
+<div>
+<div class="MathJax_Preview">
+y\ =\ \beta_0\ +\ \beta_1 x
+</div>
+<script type="math/tex; mode=display">
+y\ =\ \beta_0\ +\ \beta_1 x
+</script>
+</div>
+<p>Where <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> is any outcome variable of interest and <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> is the treatment.</p>
+<p>Observational studies on human subjects often have large variances. If those variances were not controlled well, target effect of interest might be masked and you may make type II error. Thus an anjusted model is usually used additional to the unadjusted model shown above, as following.</p>
+<div>
+<div class="MathJax_Preview">
+y\ =\ \beta_0\ +\ \beta_1 x\ +\ \gamma_1 z_1\ +\ \gamma_2 z_2\ +\ ...\ +\ \gamma_n z_n
+</div>
+<script type="math/tex; mode=display">
+y\ =\ \beta_0\ +\ \beta_1 x\ +\ \gamma_1 z_1\ +\ \gamma_2 z_2\ +\ ...\ +\ \gamma_n z_n
+</script>
+</div>
+<p>Here I will use a subset of the data to demonstrate how to do model selection for covariates in R.</p>
+<h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
+<p>A subset of the data is included in a package called <a href="https://github.com/zhuchcn/mlms">mlms</a> posted on my github account. The dataset has 80 observations of infants with their growth outcome variables at 18 months of age, treatment group, and mother's baseline characteristics at enrollment.</p>
+<div class="codehilite"><pre><span></span><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;zhuchcn/mlms&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">mlms</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;growth.rda&quot;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">growth</span><span class="p">)</span>
 </pre></div>
 
-<p>The error message says that the xlsx package can't be loaded because there is a problem while loading the rJava. And the reason is that the java library was not found. And if I go to terminal to check my java"</p>
-<div class="codehilite"><pre><span></span>$ java -version
-No Java runtime present, requesting install.
+<div class="codehilite"><pre><span></span>#&gt;    waz   laz   hcz treatment  momht mbhb      asset1 gaatdel totschyrs sex_updated
+#&gt; 1 -3.00 -1.45 -2.35       IFA 160.35  112  0.09214962    38.6         3           0
+#&gt; 2 -0.88 -0.45 -1.65       IFA 170.05  127  1.30253065    39.3        12           0
+#&gt; 3 -0.34 -1.20 -0.21       IFA 154.65  118  0.85202587    36.3         6           0
+#&gt; 4 -0.86 -0.38 -1.13       LNS 162.25  125  0.59085160    37.8         9           0
+#&gt; 5 -1.82 -1.87 -2.19       LNS 158.60  118 -1.59396219    38.6         4           1
+#&gt; 6 -0.40 -0.99 -0.42       IFA 158.70  108 -0.95266008    41.3         6           1
 </pre></div>
 
-<p>So we need to have the java installed, and according to the error message, it must be 11.0.1. However, the most latest java version on the Oracle website is 12.0.1, and Oracle does not put every historical version on the website. Although 11.0.3 is available, but it's not working! After searching on the internet for a while, I found a <a href="https://github.com/ZachCheung/oracle-java-downloads">github repository</a> that collected all links to the historical version of java, including <a href="https://github.com/ZachCheung/oracle-java-downloads/blob/master/archive/jdk-11.md">JDK 11</a>. However, the links are a little out of date since Oracle changed the directory name that stores their archives. The link below downloads the JDK 11.0.1.</p>
-<p><a href="https://download.oracle.com/otn/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_osx-x64_bin.dmg">https://download.oracle.com/otn/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_osx-x64_bin.dmg</a></p>
-<p>And if you want to download the zipped file:</p>
-<p><a href="https://download.oracle.com/otn/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_osx-x64_bin.tar.gz">https://download.oracle.com/otn/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_osx-x64_bin.tar.gz</a></p>
-<p>Install it after the downloading finishes, and your rJava dependent packages are good to go. However, if you have a newer version of JDK also installed, and if you load any rJava dependent package in RStudio, the IDE will break, because by default, it is going to use the newest JDK installed. So we need to tell the R session to use jdk-11.0.1, using a single line of code below before loading the package:</p>
-<div class="codehilite"><pre><span></span>&gt; Sys.setenv(JAVA_HOME=&#39;/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home&#39;)
+<p>The first three columns are three growth outcome variables WAZ (weight for age z-score), LAZ (length for age z-score), and HCZ (head circumference z-score). The forth column is the nutritional supplement treatment, either IFA or LNS. Column 5 to 10 are mother's baseline characteristics. The description of each column can be found from the data's documentation using the following command.</p>
+<div class="codehilite"><pre><span></span><span class="o">?</span><span class="n">growth</span>
 </pre></div>
 
-<p>Enjoy!</p>
+<h2 id="unadjusted-model">Unadjusted model<a class="headerlink" href="#unadjusted-model" title="Permanent link">&para;</a></h2>
+<p>We are now fitting an unadjusted model between treatment and the <code>laz</code>. We are doing so with the <code>lm</code> function.</p>
+<p><div class="codehilite"><pre><span></span><span class="n">fit1</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">waz</span> <span class="o">~</span> <span class="n">treatment</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">growth</span><span class="p">)</span>
+<span class="n">fit1</span>
+</pre></div>
+<div class="codehilite"><pre><span></span>#&gt; Call:
+#&gt; lm(formula = waz ~ treatment + 1, data = growth)
+#&gt; 
+#&gt; Coefficients:
+#&gt;  (Intercept)  treatmentLNS  
+#&gt;      -0.9382        0.2438 
+</pre></div></p>
+<p>To access the statistics of the linear model result, we use the <code>summary</code> function.</p>
+<p><div class="codehilite"><pre><span></span><span class="n">sum_fit1</span> <span class="o">=</span> <span class="nf">summary</span><span class="p">(</span><span class="n">fit1</span><span class="p">)</span>
+<span class="n">sum_fit1</span>
+</pre></div>
+<div class="codehilite"><pre><span></span>#&gt; Call:
+#&gt; lm(formula = laz ~ treatment + 1, data = growth)
+#&gt; 
+#&gt; Residuals:
+#&gt;      Min       1Q   Median       3Q      Max 
+#&gt; -2.98775 -0.58025 -0.08275  0.69225  2.49225 
+#&gt; 
+#&gt; Coefficients:
+#&gt;              Estimate Std. Error t value Pr(&gt;|t|)    
+#&gt; (Intercept)   -0.9723     0.1606  -6.055 4.63e-08 ***
+#&gt; treatmentLNS   0.3400     0.2271   1.497    0.138    
+#&gt; ---
+#&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#&gt; 
+#&gt; Residual standard error: 1.016 on 78 degrees of freedom
+#&gt; Multiple R-squared:  0.02794,    Adjusted R-squared:  0.01548 
+#&gt; F-statistic: 2.242 on 1 and 78 DF,  p-value: 0.1384
+</pre></div></p>
+<p>As shown above, the p value is 0.138 in this model. </p>
+<p>If you want to only access the statistic part.
+<div class="codehilite"><pre><span></span>sum_fit1$coefficients
+</pre></div>
+<div class="codehilite"><pre><span></span>#&gt;              Estimate Std. Error   t value     Pr(&gt;|t|)
+#&gt; (Intercept)  -0.97225  0.1605677 -6.055078 4.626456e-08
+#&gt; treatmentLNS  0.34000  0.2270770  1.497289 1.383539e-01
+</pre></div></p>
+<h2 id="adjusted-model">Adjusted model<a class="headerlink" href="#adjusted-model" title="Permanent link">&para;</a></h2>
+<p>We are next going to fit an adjusted model variables in column 5-10 as potential covariates. We are first going to test the correlation between the covariates and the outcome variable <code>laz</code> using <code>cor.test</code> function. In the code chunk below, we loop through column 5 to 10 and apply the <code>cor.test</code> between the <code>laz</code> and the covariate, and only output the p value. </p>
+<p><div class="codehilite"><pre><span></span><span class="nf">sapply</span><span class="p">(</span><span class="n">growth[5</span><span class="o">:</span><span class="m">10</span><span class="n">]</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">covar</span><span class="p">){</span>
+    <span class="nf">cor.test</span><span class="p">(</span><span class="n">growth</span><span class="o">$</span><span class="n">laz</span><span class="p">,</span> <span class="n">covar</span><span class="p">)</span><span class="o">$</span><span class="n">p.value</span>
+<span class="p">})</span>
+</pre></div>
+<div class="codehilite"><pre><span></span>#&gt;      momht        mbhb      asset1     gaatdel   totschyrs sex_updated 
+#&gt; 0.00192442  0.70791953  0.24337094  0.04841732  0.78633435  0.12737051 
+</pre></div></p>
+<p>From the result above we see the two variables <code>momht</code> (mother's height) and <code>gaatdel</code> (gestational age at enrollment) are correlated with <code>laz</code> (p &lt; 0.1), thus they should be included in the complete model.</p>
+<p>We now can fit a complete model.</p>
+<p><div class="codehilite"><pre><span></span><span class="n">fit2</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">laz</span> <span class="o">~</span> <span class="n">treatment</span> <span class="o">+</span> <span class="n">momht</span> <span class="o">+</span> <span class="n">gaatdel</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">growth</span><span class="p">)</span>
+</pre></div>
+<div class="codehilite"><pre><span></span>#&gt; Call:
+#&gt; lm(formula = laz ~ treatment + momht + gaatdel + 1, data = growth)
+#&gt; 
+#&gt; Coefficients:
+#&gt;  (Intercept)  treatmentLNS         momht       gaatdel  
+#&gt;    -12.78807       0.17006       0.05754       0.06975  
+</pre></div></p>
+<p>And get the statistics using <code>summary</code></p>
+<p><div class="codehilite"><pre><span></span><span class="n">sum_fit2</span> <span class="o">=</span> <span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+<span class="n">sum_fit2</span>
+</pre></div>
+<div class="codehilite"><pre><span></span>Call:
+lm(formula = laz ~ treatment + momht + gaatdel + 1, data = growth)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.5506 -0.6183 -0.1242  0.5209  2.3776 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -12.78807    3.70382  -3.453 0.000933 ***
+treatmentLNS   0.17006    0.23103   0.736 0.464067    
+momht          0.05754    0.02130   2.702 0.008590 ** 
+gaatdel        0.06975    0.05797   1.203 0.232821    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9793 on 72 degrees of freedom
+  (4 observations deleted due to missingness)
+Multiple R-squared:  0.1481,    Adjusted R-squared:  0.1126 
+F-statistic: 4.171 on 3 and 72 DF,  p-value: 0.008817
+</pre></div></p>
+<p>We can see that <code>momht</code> is unfortunately significant, and there isn't a significant treatment effect (p = 0.464).</p>
+<h2 id="mlms">mlms<a class="headerlink" href="#mlms" title="Permanent link">&para;</a></h2>
+<p>Above I demonstrated how to perform model selection for a covariates adjusted model for a single outcome variable. One can simply write some loops and generalize this idea to multiple variables. The <a href="https://github.com/zhuchcn/mlms">mlms</a> is an R package with the model selection implemented that allows users to perform model selection for multiple outcome variables quickly as below.</p>
+<p><div class="codehilite"><pre><span></span><span class="c1"># A data.frame for the outcome variables</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">growth[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="n">]</span>
+<span class="c1"># The design matrix for the primary effect</span>
+<span class="n">design</span> <span class="o">=</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="o">~</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">growth</span><span class="p">)</span>
+<span class="c1"># A data.frame for the covariates</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">growth[</span><span class="p">,</span><span class="m">5</span><span class="o">:</span><span class="m">10</span><span class="n">]</span>
+<span class="c1"># the coefficient for the major effect. This must be one of the column</span>
+<span class="c1"># names in design</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="s">&quot;treatmentLNS&quot;</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">fit_mlms</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">design</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">coef</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+<div class="codehilite"><pre><span></span>#&gt; $bivars
+#&gt;          momht       mbhb    asset1    gaatdel totschyrs sex_updated
+#&gt; waz 0.16195149 0.73601858 0.3755778 0.59073138 0.8681225   0.3665692
+#&gt; laz 0.00192442 0.70791953 0.2433709 0.04841732 0.7863344   0.1273705
+#&gt; hcz 0.43447850 0.09449692 0.3143394 0.75104026 0.2396203   0.3651060
+#&gt; 
+#&gt; $covars
+#&gt;           momht       mbhb asset1   gaatdel totschyrs sex_updated
+#&gt; waz          NA         NA     NA        NA        NA          NA
+#&gt; laz 0.008589524         NA     NA 0.2328213        NA          NA
+#&gt; hcz          NA 0.09057698     NA        NA        NA          NA
+#&gt; 
+#&gt; $models
+#&gt;   var      model   Estimate Std. Error   CI 2.5 %  CI 97.5 % df   t value  Pr(&gt;|t|)
+#&gt; 1 waz unadjusted 0.24375000  0.2353540 -0.2248039  0.7123039 78 1.0356738 0.3035546
+#&gt; 2 waz   adjusted 0.24375000  0.2353540 -0.2248039  0.7123039 78 1.0356738 0.3035546
+#&gt; 3 laz unadjusted 0.34000000  0.2270770 -0.1120756  0.7920756 78 1.4972894 0.1383539
+#&gt; 4 laz   adjusted 0.17005553  0.2310253 -0.2904851  0.6305961 72 0.7360904 0.4640671
+#&gt; 5 hcz unadjusted 0.07858974  0.2159208 -0.3513634  0.5085429 77 0.3639749 0.7168743
+#&gt; 6 hcz   adjusted 0.10390902  0.2137643 -0.3218394  0.5296574 76 0.4860916 0.6283009
+#&gt; 
+#&gt; attr(,&quot;class&quot;)
+#&gt; [1] &quot;summary.mlms&quot;
+</pre></div></p>
                 
                   
                 
@@ -692,7 +931,7 @@ No Java runtime present, requesting install.
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../2019-12-17/" title="model selection" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="blogs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -701,19 +940,19 @@ No Java runtime present, requesting install.
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                model selection
+                blogs
               </span>
             </div>
           </a>
         
         
-          <a href="../2019-03-25/" title="shiny-modules" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../2019-07-07/" title="rJava" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                shiny-modules
+                rJava
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
