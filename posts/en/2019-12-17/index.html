@@ -829,7 +829,7 @@ y\ =\ \beta_0\ +\ \beta_1 x\ +\ \gamma_1 z_1\ +\ \gamma_2 z_2\ +\ ...\ +\ \gamma
 </pre></div></p>
 <h2 id="adjusted-model">Adjusted model<a class="headerlink" href="#adjusted-model" title="Permanent link">&para;</a></h2>
 <p>We are next going to fit an adjusted model variables in column 5-10 as potential covariates. We are first going to test the correlation between the covariates and the outcome variable <code>laz</code> using <code>cor.test</code> function. In the code chunk below, we loop through column 5 to 10 and apply the <code>cor.test</code> between the <code>laz</code> and the covariate, and only output the p value. </p>
-<p><div class="codehilite"><pre><span></span><span class="nf">sapply</span><span class="p">(</span><span class="n">growth[5</span><span class="o">:</span><span class="m">10</span><span class="n">]</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">covar</span><span class="p">){</span>
+<p><div class="codehilite"><pre><span></span><span class="nf">sapply</span><span class="p">(</span><span class="n">growth</span><span class="p">[</span><span class="m">5</span><span class="o">:</span><span class="m">10</span><span class="p">],</span> <span class="nf">function</span><span class="p">(</span><span class="n">covar</span><span class="p">){</span>
     <span class="nf">cor.test</span><span class="p">(</span><span class="n">growth</span><span class="o">$</span><span class="n">laz</span><span class="p">,</span> <span class="n">covar</span><span class="p">)</span><span class="o">$</span><span class="n">p.value</span>
 <span class="p">})</span>
 </pre></div>
@@ -876,11 +876,11 @@ F-statistic: 4.171 on 3 and 72 DF,  p-value: 0.008817
 <h2 id="mlms">mlms<a class="headerlink" href="#mlms" title="Permanent link">&para;</a></h2>
 <p>Above I demonstrated how to perform model selection for a covariates adjusted model for a single outcome variable. One can simply write some loops and generalize this idea to multiple variables. The <a href="https://github.com/zhuchcn/mlms">mlms</a> is an R package with the model selection implemented that allows users to perform model selection for multiple outcome variables quickly as below.</p>
 <p><div class="codehilite"><pre><span></span><span class="c1"># A data.frame for the outcome variables</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">growth[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="n">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">growth</span><span class="p">[,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">]</span>
 <span class="c1"># The design matrix for the primary effect</span>
 <span class="n">design</span> <span class="o">=</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="o">~</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">growth</span><span class="p">)</span>
 <span class="c1"># A data.frame for the covariates</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">growth[</span><span class="p">,</span><span class="m">5</span><span class="o">:</span><span class="m">10</span><span class="n">]</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">growth</span><span class="p">[,</span><span class="m">5</span><span class="o">:</span><span class="m">10</span><span class="p">]</span>
 <span class="c1"># the coefficient for the major effect. This must be one of the column</span>
 <span class="c1"># names in design</span>
 <span class="n">coef</span> <span class="o">=</span> <span class="s">&quot;treatmentLNS&quot;</span>
